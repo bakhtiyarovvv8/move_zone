@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MovieZone — Admin Panel</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="home.html" class="brand">
+                Movie<span>Zone</span>
+            </a>
+
+            <div class="admin-label">
+                <span class="status-dot"></span>
+                ADMIN PANEL
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN
+            </p>
+
+
+            <button
+                type="button"
+                class="nav-item active"
+                data-section="dashboard"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>Dashboard</span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-section="accounts"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>Accounts</span>
+
+                <span
+                    class="nav-count"
+                    id="accountsNavCount"
+                >
+                    0
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-section="films"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-film"></i>
+                </span>
+
+                <span>Films</span>
+
+                <span
+                    class="nav-count"
+                    id="filmsNavCount"
+                >
+                    0
+                </span>
+
+            </button>
+
+
+            <p class="nav-title second-title">
+                SYSTEM
+            </p>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-section="settings"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>Settings</span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-profile">
+
+                <div class="profile-avatar">
+                    IM
+                </div>
+
+                <div class="profile-text">
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <span>
+                        Super Admin
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="profile-menu"
+                >
+
+                    <i class="fa-solid fa-ellipsis"></i>
+
+                </button>
+
+            </div>
+
+
+            <a
+                href="home.html"
+                class="back-home"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                <span>
+                    Back to website
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu"
+                    id="mobileMenu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div>
+
+                    <p class="eyebrow">
+                        MANAGEMENT
+                    </p>
+
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="server-status">
+
+                    <span class="status-dot"></span>
+
+                    <span id="serverText">
+                        Checking server...
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-button"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        IM
+                    </div>
+
+                    <div class="top-profile-text">
+
+                        <strong>
+                            Imron
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             DASHBOARD
+        ====================================================== -->
+
+        <section
+            class="content-section active"
+            id="dashboard"
+        >
+
+            <div class="welcome-card">
+
+                <div class="welcome-content">
+
+                    <span class="welcome-badge">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        CONTROL CENTER
+
+                    </span>
+
+
+                    <h2>
+
+                        Welcome back,
+                        <span>Imron.</span>
+
+                    </h2>
+
+
+                    <p>
+                        Manage your users, movies and platform
+                        data from one place.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-decoration">
+
+                    <div class="orb orb-1"></div>
+
+                    <div class="orb orb-2"></div>
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stats-grid">
+
+
+                <!-- USERS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon orange">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <span class="stat-trend positive">
+                            Live
+                        </span>
+
+                    </div>
+
+
+                    <span class="stat-label">
+                        Total accounts
+                    </span>
+
+
+                    <strong
+                        class="stat-value"
+                        id="totalUsers"
+                    >
+                        0
+                    </strong>
+
+
+                    <span class="stat-description">
+                        Registered users
+                    </span>
+
+                </div>
+
+
+
+                <!-- FILMS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon purple">
+
+                            <i class="fa-solid fa-film"></i>
+
+                        </div>
+
+                        <span class="stat-trend positive">
+                            Library
+                        </span>
+
+                    </div>
+
+
+                    <span class="stat-label">
+                        Total films
+                    </span>
+
+
+                    <strong
+                        class="stat-value"
+                        id="totalFilms"
+                    >
+                        0
+                    </strong>
+
+
+                    <span class="stat-description">
+                        Available in database
+                    </span>
+
+                </div>
+
+
+
+                <!-- API -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon blue">
+
+                            <i class="fa-solid fa-server"></i>
+
+                        </div>
+
+                        <span class="stat-trend positive">
+                            API
+                        </span>
+
+                    </div>
+
+
+                    <span class="stat-label">
+                        API status
+                    </span>
+
+
+                    <strong
+                        class="stat-value status-value"
+                        id="apiStatus"
+                    >
+                        Offline
+                    </strong>
+
+
+                    <span class="stat-description">
+                        JSON Server · Port 3001
+                    </span>
+
+                </div>
+
+
+
+                <!-- DATABASE -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon green">
+
+                            <i class="fa-solid fa-database"></i>
+
+                        </div>
+
+                        <span class="stat-trend positive">
+                            DB
+                        </span>
+
+                    </div>
+
+
+                    <span class="stat-label">
+                        Database
+                    </span>
+
+
+                    <strong
+                        class="stat-value status-value"
+                        id="databaseStatus"
+                    >
+                        Offline
+                    </strong>
+
+
+                    <span class="stat-description">
+                        db.json
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DASHBOARD PANELS -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- RECENT USERS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <p class="panel-eyebrow">
+                                USER MANAGEMENT
+                            </p>
+
+                            <h3>
+                                Recent accounts
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="panel-link"
+                            data-go="accounts"
+                        >
+
+                            View all
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="account-list"
+                        id="recentUsers"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- RECENT FILMS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <p class="panel-eyebrow">
+                                CONTENT LIBRARY
+                            </p>
+
+                            <h3>
+                                Recent films
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="panel-link"
+                            data-go="films"
+                        >
+
+                            View all
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="film-list"
+                        id="recentFilms"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="quick-panel">
+
+                <div class="quick-header">
+
+                    <div>
+
+                        <p class="panel-eyebrow">
+                            QUICK ACTIONS
+                        </p>
+
+                        <h3>
+                            Manage your platform
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-grid">
+
+
+                    <button
+                        type="button"
+                        class="quick-card"
+                        data-go="accounts"
+                    >
+
+                        <div class="quick-icon orange">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Manage accounts
+                            </strong>
+
+                            <span>
+                                Add, edit or remove users
+                            </span>
+
+                        </div>
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="quick-card"
+                        data-go="films"
+                    >
+
+                        <div class="quick-icon purple">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Manage films
+                            </strong>
+
+                            <span>
+                                Add, edit or remove movies
+                            </span>
+
+                        </div>
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ACCOUNTS
+        ====================================================== -->
+
+        <section
+            class="content-section"
+            id="accounts"
+        >
+
+            <div class="section-head">
+
+                <div>
+
+                    <p class="panel-eyebrow">
+                        USER MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Accounts
+                    </h2>
+
+                    <p>
+                        Manage registered users and account information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="addUserBtn"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add account
+
+                </button>
+
+            </div>
+
+
+
+            <div class="toolbar">
+
+                <div class="search-field">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="accountSearch"
+                        placeholder="Search accounts..."
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="data-panel">
+
+                <div class="table-header">
+
+                    <div>
+                        User
+                    </div>
+
+                    <div>
+                        Email
+                    </div>
+
+                    <div>
+                        Status
+                    </div>
+
+                    <div>
+                        Actions
+                    </div>
+
+                </div>
+
+
+                <div id="usersTableBody"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FILMS
+        ====================================================== -->
+
+        <section
+            class="content-section"
+            id="films"
+        >
+
+            <div class="section-head">
+
+                <div>
+
+                    <p class="panel-eyebrow">
+                        CONTENT MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Films
+                    </h2>
+
+                    <p>
+                        Manage movies available in your catalog.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="addFilmBtn"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add film
+
+                </button>
+
+            </div>
+
+
+
+            <div class="toolbar">
+
+                <div class="search-field">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="filmSearch"
+                        placeholder="Search films..."
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="films-admin-grid"
+                id="filmsGrid"
+            ></div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SETTINGS
+        ====================================================== -->
+
+        <section
+            class="content-section"
+            id="settings"
+        >
+
+            <div class="section-head">
+
+                <div>
+
+                    <p class="panel-eyebrow">
+                        SYSTEM
+                    </p>
+
+                    <h2>
+                        Settings
+                    </h2>
+
+                    <p>
+                        Configure your administration workspace.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="settings-grid">
+
+
+                <div class="settings-card">
+
+                    <div class="settings-icon">
+
+                        <i class="fa-solid fa-server"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            API Server
+                        </h3>
+
+                        <p>
+                            JSON Server endpoint
+                        </p>
+
+                        <code>
+                            http://localhost:3001
+                        </code>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="settings-card">
+
+                    <div class="settings-icon">
+
+                        <i class="fa-solid fa-database"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Database
+                        </h3>
+
+                        <p>
+                            Local JSON database
+                        </p>
+
+                        <code>
+                            db.json
+                        </code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     USER MODAL
+========================================================== -->
+
+<div
+    class="modal hidden"
+    id="userModal"
+>
+
+    <div class="modal-card">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="panel-eyebrow">
+                    ACCOUNT
+                </p>
+
+                <h3 id="userModalTitle">
+                    Add Account
+                </h3>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close="userModal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <form id="userForm">
+
+
+            <input
+                type="hidden"
+                id="userId"
+            >
+
+
+
+            <!-- NAME -->
+
+            <div class="modal-field">
+
+                <label for="userName">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="userName"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="modal-field">
+
+                <label for="userEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="userEmail"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="modal-field">
+
+                <label for="userPassword">
+                    Password
+                </label>
+
+                <input
+                    type="text"
+                    id="userPassword"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- ROLE -->
+
+            <div class="modal-field">
+
+                <label for="userRole">
+                    Account type
+                </label>
+
+                <select
+                    id="userRole"
+                    required
+                >
+
+                    <option value="user">
+                        Обычный пользователь
+                    </option>
+
+                    <option value="admin">
+                        Администратор
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- BUTTONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close="userModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Save account
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FILM MODAL
+========================================================== -->
+
+<div
+    class="modal hidden"
+    id="filmModal"
+>
+
+    <div class="modal-card">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="panel-eyebrow">
+                    CONTENT
+                </p>
+
+                <h3 id="filmModalTitle">
+                    Add Film
+                </h3>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close="filmModal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <form id="filmForm">
+
+
+            <input
+                type="hidden"
+                id="filmId"
+            >
+
+
+
+            <!-- TITLE -->
+
+            <div class="modal-field">
+
+                <label for="filmTitle">
+                    Title
+                </label>
+
+                <input
+                    type="text"
+                    id="filmTitle"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- YEAR + RATING -->
+
+            <div class="modal-form-grid">
+
+
+                <div class="modal-field">
+
+                    <label for="filmYear">
+                        Year
+                    </label>
+
+                    <input
+                        type="text"
+                        id="filmYear"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="modal-field">
+
+                    <label for="filmRating">
+                        Rating
+                    </label>
+
+                    <input
+                        type="number"
+                        id="filmRating"
+                        min="0"
+                        max="10"
+                        step="0.1"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GENRE -->
+
+            <div class="modal-field">
+
+                <label for="filmGenre">
+                    Genre
+                </label>
+
+                <input
+                    type="text"
+                    id="filmGenre"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- IMAGE -->
+
+            <div class="modal-field">
+
+                <label for="filmImage">
+                    Poster URL
+                </label>
+
+                <input
+                    type="url"
+                    id="filmImage"
+                    placeholder="https://..."
+                >
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="modal-field">
+
+                <label for="filmDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="filmDescription"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- BUTTONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close="filmModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Save film
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MovieZone — Регистрация</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <!-- LEFT -->
+
+        <section class="auth-left">
+
+            <div class="logo">
+                MOVIE<span>ZONE</span>
+            </div>
+
+            <div class="auth-left-content">
+
+                <div class="movie-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+
+                <h1>
+                    Создай свой<br>
+                    <span>киноаккаунт.</span>
+                </h1>
+
+                <p>
+                    Зарегистрируйся бесплатно,
+                    сохраняй любимые фильмы
+                    и создавай свою коллекцию.
+                </p>
+
+                <div class="auth-features">
+
+                    <div class="auth-feature">
+                        <i class="fa-solid fa-check"></i>
+                        Сохраняй любимые фильмы
+                    </div>
+
+                    <div class="auth-feature">
+                        <i class="fa-solid fa-check"></i>
+                        Формируй личную коллекцию
+                    </div>
+
+                    <div class="auth-feature">
+                        <i class="fa-solid fa-check"></i>
+                        История просмотров
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT -->
+
+        <section class="auth-right">
+
+            <h2 class="auth-title">
+                Создать аккаунт
+            </h2>
+
+            <p class="auth-subtitle">
+                Присоединяйся к MovieZone
+            </p>
+
+
+            <form
+                id="registerForm"
+                class="auth-form"
+            >
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Имя"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Пароль"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                >
+                    Создать аккаунт
+                </button>
+
+            </form>
+
+
+            <div class="auth-switch">
+
+                Уже есть аккаунт?
+
+                <a href="index.html">
+                    Войти
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="register.js"></script>
+
+</body>
+
+</html>

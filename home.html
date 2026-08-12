@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MovieZone</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">
+            <i class="fa-solid fa-film"></i>
+        </span>
+
+        MOVIE<span>ZONE</span>
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a
+            href="#"
+            class="active"
+        >
+            Главная
+        </a>
+
+        <a href="#movies">
+            Фильмы
+        </a>
+
+        <a href="#new">
+            Новинки
+        </a>
+
+        <a href="#action">
+            Боевики
+        </a>
+
+        <a href="#">
+            Моя коллекция
+        </a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Поиск фильма..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div
+            class="profile"
+            id="profile"
+        >
+
+            <div class="avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div class="profile-info">
+
+                <span>
+                    Привет,
+                </span>
+
+                <strong id="userName">
+                    User
+                </strong>
+
+            </div>
+
+
+            <i
+                class="fa-solid fa-chevron-down arrow"
+            ></i>
+
+        </div>
+
+
+        <button
+            class="logout"
+            id="logout"
+            title="Выйти"
+        >
+
+            <i
+                class="fa-solid fa-right-from-bracket"
+            ></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div
+        class="hero-slider"
+        id="heroSlider"
+    >
+
+        <!-- SLIDE 1 -->
+
+        <article class="hero-slide active">
+
+            <img
+                src=""
+                alt=""
+            >
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <i
+                        class="fa-solid fa-fire"
+                    ></i>
+
+                    ТОП ФИЛЬМ
+
+                </div>
+
+
+                <h1>
+                    Загрузка...
+                </h1>
+
+
+                <div class="hero-meta">
+
+                    <span>—</span>
+
+                    <span>•</span>
+
+                    <span>—</span>
+
+                    <span>•</span>
+
+                    <span class="rating">
+                        ★ —
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Загрузка информации о фильме...
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="watch-btn"
+                    >
+
+                        <i
+                            class="fa-solid fa-play"
+                        ></i>
+
+                        Смотреть
+
+                    </button>
+
+
+                    <button
+                        class="more-btn"
+                    >
+
+                        <i
+                            class="fa-solid fa-circle-info"
+                        ></i>
+
+                        Подробнее
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SLIDE 2 -->
+
+        <article class="hero-slide">
+
+            <img
+                src=""
+                alt=""
+            >
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <i
+                        class="fa-solid fa-bolt"
+                    ></i>
+
+                    НОВИНКА
+
+                </div>
+
+
+                <h1>
+                    Загрузка...
+                </h1>
+
+
+                <div class="hero-meta">
+
+                    <span>—</span>
+
+                    <span>•</span>
+
+                    <span>—</span>
+
+                    <span>•</span>
+
+                    <span class="rating">
+                        ★ —
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Загрузка информации о фильме...
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="watch-btn"
+                    >
+
+                        <i
+                            class="fa-solid fa-play"
+                        ></i>
+
+                        Смотреть
+
+                    </button>
+
+
+                    <button
+                        class="more-btn"
+                    >
+
+                        <i
+                            class="fa-solid fa-circle-info"
+                        ></i>
+
+                        Подробнее
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SLIDE 3 -->
+
+        <article class="hero-slide">
+
+            <img
+                src=""
+                alt=""
+            >
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <i
+                        class="fa-solid fa-star"
+                    ></i>
+
+                    РЕКОМЕНДУЕМ
+
+                </div>
+
+
+                <h1>
+                    Загрузка...
+                </h1>
+
+
+                <div class="hero-meta">
+
+                    <span>—</span>
+
+                    <span>•</span>
+
+                    <span>—</span>
+
+                    <span>•</span>
+
+                    <span class="rating">
+                        ★ —
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Загрузка информации о фильме...
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="watch-btn"
+                    >
+
+                        <i
+                            class="fa-solid fa-play"
+                        ></i>
+
+                        Смотреть
+
+                    </button>
+
+
+                    <button
+                        class="more-btn"
+                    >
+
+                        <i
+                            class="fa-solid fa-circle-info"
+                        ></i>
+
+                        Подробнее
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+
+    <!-- SLIDER BUTTONS -->
+
+    <button
+        class="slider-btn prev"
+        id="prev"
+        aria-label="Предыдущий фильм"
+    >
+
+        <i
+            class="fa-solid fa-chevron-left"
+        ></i>
+
+    </button>
+
+
+    <button
+        class="slider-btn next"
+        id="next"
+        aria-label="Следующий фильм"
+    >
+
+        <i
+            class="fa-solid fa-chevron-right"
+        ></i>
+
+    </button>
+
+
+
+    <!-- DOTS -->
+
+    <div
+        class="slider-dots"
+        id="sliderDots"
+    >
+
+        <span class="dot active"></span>
+
+        <span class="dot"></span>
+
+        <span class="dot"></span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MOVIES
+===================================================== -->
+
+<main
+    class="movies-container"
+    id="movies"
+>
+
+
+    <!-- POPULAR -->
+
+    <section class="movie-section">
+
+        <div class="section-header">
+
+            <div class="section-title">
+
+                <span class="accent-line"></span>
+
+                <div>
+
+                    <small>
+                        MOVIEZONE
+                    </small>
+
+                    <h2>
+                        Сейчас популярно
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <a href="#movies">
+
+                Смотреть все
+
+                <i
+                    class="fa-solid fa-arrow-right"
+                ></i>
+
+            </a>
+
+        </div>
+
+
+        <div
+            class="movies-grid"
+            id="moviesGrid"
+        ></div>
+
+    </section>
+
+
+
+    <!-- NEW -->
+
+    <section
+        class="movie-section"
+        id="new"
+    >
+
+        <div class="section-header">
+
+            <div class="section-title">
+
+                <span class="accent-line"></span>
+
+                <div>
+
+                    <small>
+                        NEW RELEASES
+                    </small>
+
+                    <h2>
+                        Новинки
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <a href="#new">
+
+                Смотреть все
+
+                <i
+                    class="fa-solid fa-arrow-right"
+                ></i>
+
+            </a>
+
+        </div>
+
+
+        <div
+            class="movies-grid"
+            id="newMoviesGrid"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ACTION -->
+
+    <section
+        class="movie-section"
+        id="action"
+    >
+
+        <div class="section-header">
+
+            <div class="section-title">
+
+                <span class="accent-line"></span>
+
+                <div>
+
+                    <small>
+                        ACTION
+                    </small>
+
+                    <h2>
+                        Лучшие боевики
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="movies-grid"
+            id="actionMoviesGrid"
+        ></div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div>
+
+            <div class="footer-logo">
+
+                MOVIE<span>ZONE</span>
+
+            </div>
+
+
+            <p class="footer-description">
+
+                Твоя коллекция фильмов
+                в одном месте.
+
+            </p>
+
+        </div>
+
+
+        <div class="socials">
+
+            <a href="#">
+                <i
+                    class="fa-brands fa-telegram"
+                ></i>
+            </a>
+
+            <a href="#">
+                <i
+                    class="fa-brands fa-youtube"
+                ></i>
+            </a>
+
+            <a href="#">
+                <i
+                    class="fa-brands fa-instagram"
+                ></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 MovieZone.
+            Все права защищены.
+        </p>
+
+
+        <span>
+            Made for movie lovers
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<script src="home.js"></script>
+
+</body>
+</html>
